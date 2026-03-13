@@ -634,11 +634,11 @@ function PricingTable() {
                 ) : (
                   <>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-4xl font-bold text-terra-blue">${tier.price * 12}</span>
+                      <span className="text-4xl font-bold text-terra-blue">${tier.price! * 12}</span>
                       <span className="text-sm text-terra-dark/60">/box</span>
                     </div>
                     <div className="mt-1">
-                      <span className="text-sm text-terra-dark/60">${tier.price}/kit</span>
+                      <span className="text-sm text-terra-dark/60">${tier.price!}/kit</span>
                     </div>
                     <div className="mt-3 flex items-center gap-2 flex-wrap">
                       <span className="inline-block bg-terra-light-green text-terra-green text-xs font-bold px-2.5 py-1 rounded-full">
@@ -665,15 +665,15 @@ function PricingTable() {
                   <p className="text-xs font-semibold text-terra-dark/70 mb-2">Minimum Order:</p>
                   <div className="space-y-1.5 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-terra-dark/70">{tier.boxes.split('-')[0].trim()} x ${tier.price * 12}/box</span>
+                      <span className="text-terra-dark/70">{tier.boxes.split('-')[0].trim()} x ${tier.price! * 12}/box</span>
                       <span className="font-semibold text-terra-dark">
-                        ${Math.floor(tier.minKits / 12) * tier.price * 12}
+                        ${Math.floor(tier.minKits / 12) * tier.price! * 12}
                       </span>
                     </div>
                     <div className="flex justify-between text-xs">
                       <span className="text-terra-dark/60">= {Math.floor(tier.minKits / 12) * 12} kits total</span>
                       <span className="text-terra-green font-bold">
-                        Save ${((19.95 - tier.price) * (Math.floor(tier.minKits / 12) * 12)).toFixed(2)}
+                        Save ${((19.95 - tier.price!) * (Math.floor(tier.minKits / 12) * 12)).toFixed(2)}
                       </span>
                     </div>
                   </div>
