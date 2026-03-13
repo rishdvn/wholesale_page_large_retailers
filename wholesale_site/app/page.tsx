@@ -970,7 +970,7 @@ function ContactSection() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      store_name: formData.get('store_name') as string,
+      business_name: formData.get('store_name') as string,
       contact_name: formData.get('contact_name') as string,
       email: formData.get('email') as string,
       phone: formData.get('phone') as string,
@@ -979,7 +979,7 @@ function ContactSection() {
     };
 
     const { error: submitError } = await supabase
-      .from('retail_enquiries')
+      .from('wholesale_enquiries')
       .insert([data]);
 
     if (submitError) {
