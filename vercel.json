@@ -1,7 +1,0 @@
-{
-  "buildCommand": "cd wholesale_site && npm run build",
-  "devCommand": "cd wholesale_site && npm run dev",
-  "installCommand": "cd wholesale_site && npm install",
-  "framework": "nextjs",
-  "outputDirectory": "wholesale_site/.next"
-}
