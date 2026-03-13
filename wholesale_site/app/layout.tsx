@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Terra Clay - Wholesale Partners",
   description:
     "Partner with Terra Clay. Mess-free clay kits loved by 10,000+ families. Up to 63% retail margins, low minimums, fast Melbourne shipping.",
+  // Custom domain: wholesale.itsterra.com.au
 };
 
 export default function RootLayout({
