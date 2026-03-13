@@ -210,8 +210,8 @@ function Hero() {
               Now Accepting Wholesale Partners
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-terra-dark leading-tight">
-              Stock Terra Clay<br />
-              <span className="text-terra-brown">in Your Store</span>
+              Partner with Terra Clay<br />
+              <span className="text-terra-brown">for Wholesale</span>
             </h1>
             <p className="mt-6 text-lg text-terra-dark/70 max-w-lg leading-relaxed">
               Australia&apos;s #1 mess-free clay kits. Loved by 10,000+ families.
@@ -278,7 +278,7 @@ const VALUE_PROPS = [
   { icon: <IconProvenSeller />, title: "Birthday & Gift Hero", desc: "Last-minute gift solution. Works for kids' birthdays, couples' date nights, and thoughtful presents." },
   { icon: <IconAustralian />, title: "Year-Round Revenue", desc: "Not seasonal. Sells during holidays, rainy weekends, date nights, birthdays. Reliable inventory." },
   { icon: <IconLowMin />, title: "Low Minimums", desc: "Start with just 12 kits. Test the range without massive upfront commitment." },
-  { icon: <IconFastShip />, title: "Fast Shipping", desc: "3-5 business days from our Melbourne warehouse to your storefront." },
+  { icon: <IconFastShip />, title: "Fast Shipping", desc: "3-5 business days from our Melbourne warehouse to your location." },
 ];
 
 function WhyTerra() {
@@ -286,8 +286,8 @@ function WhyTerra() {
     <section id="why-terra" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-terra-dark">Why Stock Terra?</h2>
-          <p className="mt-3 text-terra-dark/60 max-w-2xl mx-auto">Everything a retailer needs: proven product, great margins, and zero hassle.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-terra-dark">Why Partner with Terra?</h2>
+          <p className="mt-3 text-terra-dark/60 max-w-2xl mx-auto">Everything a wholesale partner needs: proven product, great margins, and zero hassle.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {VALUE_PROPS.map((vp) => (
@@ -382,14 +382,14 @@ function AlreadyInStores() {
             <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
               <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
             </svg>
-            Trusted by Retailers Australia-Wide
+            Trusted by Wholesale Partners Australia-Wide
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-terra-dark mb-4">
             Already Stocked in<br />
             <span className="text-terra-brown">Leading Stores</span>
           </h2>
           <p className="text-lg text-terra-dark/60 max-w-2xl mx-auto">
-            Join 100+ retailers bringing screen-free creativity to their customers.
+            Join 100+ wholesale partners bringing screen-free creativity to their customers.
             See how Terra displays beautifully in boutiques and toy stores.
           </p>
         </div>
@@ -530,103 +530,161 @@ function ProductLines() {
    SECTION: Pricing Table
    ────────────────────────────────────────────── */
 
-const TIERS = [
+const WHOLESALE_TIERS = [
   {
-    name: "Taster Bundle",
-    qty: 12,
-    price: 10,
-    boxTotal: 120,
-    recRetail: 19.95,
-    profitKit: 9.95,
-    margin: 50,
+    name: "Distributor Starter",
+    boxes: "4-10 boxes",
+    minKits: 50,
+    maxKits: 120,
+    price: 7,
+    savings: "65%",
+    savingsVsRetail: "$12.95/kit",
     popular: false,
-    features: ["12 kits — mix any themes", "Perfect to test the range", "Free POS display card", "Reorder anytime"],
+    features: [
+      "50-120 kits (4-10 boxes)",
+      "Perfect for wholesale distributors",
+      "Mix any themes across all lines",
+      "Dedicated distributor support",
+      "Volume discount pricing",
+      "Flexible payment terms available"
+    ],
   },
   {
-    name: "Standard Bundle",
-    qty: 24,
-    price: 9,
-    boxTotal: 216,
-    recRetail: 19.95,
-    profitKit: 10.95,
-    margin: 55,
+    name: "Distributor Premium",
+    boxes: "10-100 boxes",
+    minKits: 120,
+    maxKits: 1200,
+    price: 6,
+    savings: "70%",
+    savingsVsRetail: "$13.95/kit",
     popular: true,
-    features: ["24 kits — our most popular tier", "Best balance of value & variety", "Free POS display card", "Priority restock support"],
+    features: [
+      "120-1200 kits (10-100 boxes)",
+      "Maximum distributor discount",
+      "Priority warehouse allocation",
+      "Dedicated account manager",
+      "Co-branded marketing materials",
+      "Net 30 payment terms",
+      "Exclusive new product previews"
+    ],
   },
   {
-    name: "Premium Bundle",
-    qty: 48,
-    price: 8,
-    boxTotal: 384,
-    recRetail: 19.95,
-    profitKit: 11.95,
-    margin: 60,
+    name: "Enterprise",
+    boxes: "100+ boxes",
+    minKits: 1200,
+    maxKits: null,
+    price: null,
+    customPricing: true,
+    savings: null,
+    savingsVsRetail: null,
     popular: false,
-    features: ["48 kits — maximum margin", "Dedicated account manager", "Free POS display card", "Co-branded social assets"],
+    features: [
+      "1200+ kits (100+ boxes)",
+      "Custom pricing for volume orders",
+      "White-label opportunities available",
+      "Exclusive territory rights (select regions)",
+      "Custom product development options",
+      "Direct warehouse shipments",
+      "Priority production scheduling",
+      "Quarterly business reviews"
+    ],
   },
 ];
 
 function PricingTable() {
   return (
-    <section id="pricing" className="py-20 bg-white">
+    <section id="pricing" className="py-20 bg-gradient-to-b from-white to-terra-cream border-t border-terra-brown/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-terra-dark">Simple, Profitable Pricing</h2>
+          <div className="inline-flex items-center gap-2 bg-terra-blue/10 text-terra-blue px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
+            <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+            </svg>
+            Wholesale Pricing
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-terra-dark">WHOLESALE DISTRIBUTOR PRICING</h2>
           <p className="mt-3 text-terra-dark/60 max-w-2xl mx-auto">
-            Retail at <strong>$14.95-$21.95</strong> per kit. Strong impulse purchase. Your wholesale price starts at just $8.
+            Supply retailers with Australia&apos;s #1 clay kits. <strong>Each box = 12 kits.</strong> Deeper discounts for larger orders.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {TIERS.map((tier) => (
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+          {WHOLESALE_TIERS.map((tier) => (
             <div
               key={tier.name}
               className={`relative rounded-2xl bg-white border-2 p-6 lg:p-8 flex flex-col ${
-                tier.popular ? "pricing-popular border-terra-amber" : "border-terra-brown/10"
+                tier.popular ? "border-terra-blue shadow-xl shadow-terra-blue/10" : "border-terra-brown/10"
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-terra-amber text-terra-dark text-xs font-bold px-4 py-1 rounded-full">
-                  Most Popular
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-terra-blue text-white text-xs font-bold px-4 py-1 rounded-full">
+                  Best Value
                 </div>
               )}
 
               <h3 className="text-xl font-bold text-terra-dark">{tier.name}</h3>
-              <p className="text-sm text-terra-dark/60 mt-1">{tier.qty} kits</p>
+              <p className="text-sm text-terra-dark/60 mt-1">{tier.boxes}</p>
 
               {/* Price */}
               <div className="mt-6">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-bold text-terra-brown">${tier.price}</span>
-                  <span className="text-sm text-terra-dark/60">/kit</span>
-                </div>
-                <p className="text-sm text-terra-dark/60 mt-1">Box total: <strong>${tier.boxTotal}</strong></p>
+                {tier.customPricing ? (
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-bold text-terra-blue">CUSTOM PRICING</span>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold text-terra-blue">${tier.price * 12}</span>
+                      <span className="text-sm text-terra-dark/60">/box</span>
+                    </div>
+                    <div className="mt-1">
+                      <span className="text-sm text-terra-dark/60">${tier.price}/kit</span>
+                    </div>
+                    <div className="mt-3 flex items-center gap-2 flex-wrap">
+                      <span className="inline-block bg-terra-light-green text-terra-green text-xs font-bold px-2.5 py-1 rounded-full">
+                        Save {tier.savings} vs Retail
+                      </span>
+                      <span className="text-sm text-terra-dark/60">({tier.savingsVsRetail} savings per kit)</span>
+                    </div>
+                  </>
+                )}
               </div>
 
-              {/* Profit highlight */}
-              <div className="mt-5 bg-terra-light-green rounded-xl p-4 space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-terra-dark/70">Rec. Retail</span>
-                  <span className="font-semibold text-terra-dark">${tier.recRetail.toFixed(2)}</span>
+              {/* Example calculation */}
+              {tier.customPricing ? (
+                <div className="mt-5 bg-terra-blue/5 rounded-xl p-4 border border-terra-blue/10">
+                  <p className="text-sm font-semibold text-terra-dark text-center">
+                    Contact us for custom enterprise pricing
+                  </p>
+                  <p className="text-xs text-terra-dark/60 text-center mt-2">
+                    Volume discounts, flexible terms, and white-label options available
+                  </p>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-terra-dark/70">Profit per kit</span>
-                  <span className="font-bold text-terra-green">${tier.profitKit.toFixed(2)}</span>
+              ) : (
+                <div className="mt-5 bg-terra-blue/5 rounded-xl p-4 border border-terra-blue/10">
+                  <p className="text-xs font-semibold text-terra-dark/70 mb-2">Minimum Order:</p>
+                  <div className="space-y-1.5 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-terra-dark/70">{tier.boxes.split('-')[0].trim()} x ${tier.price * 12}/box</span>
+                      <span className="font-semibold text-terra-dark">
+                        ${Math.floor(tier.minKits / 12) * tier.price * 12}
+                      </span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-terra-dark/60">= {Math.floor(tier.minKits / 12) * 12} kits total</span>
+                      <span className="text-terra-green font-bold">
+                        Save ${((19.95 - tier.price) * (Math.floor(tier.minKits / 12) * 12)).toFixed(2)}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-terra-dark/70">Profit per box</span>
-                  <span className="font-bold text-terra-green">${(tier.profitKit * tier.qty).toFixed(2)}</span>
-                </div>
-                <div className="pt-2 border-t border-terra-green/20 flex justify-between text-sm">
-                  <span className="text-terra-dark/70">Margin</span>
-                  <span className="font-bold text-white bg-terra-green px-2.5 py-0.5 rounded-full text-xs">{tier.margin}%</span>
-                </div>
-              </div>
+              )}
 
               {/* Features */}
               <ul className="mt-6 space-y-2.5 flex-1">
                 {tier.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-terra-dark/70">
-                    <svg className="w-5 h-5 text-terra-green shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <svg className="w-5 h-5 text-terra-blue shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     {f}
@@ -636,16 +694,37 @@ function PricingTable() {
 
               <a
                 href="#contact"
+                onClick={() => {
+                  setTimeout(() => {
+                    const select = document.querySelector('select[name="bundle_interest"]') as HTMLSelectElement;
+                    if (select) {
+                      const bundleMap: { [key: string]: string } = {
+                        'Distributor Starter': 'Distributor Starter (4-10 boxes)',
+                        'Distributor Premium': 'Distributor Premium (10-100 boxes)',
+                        'Enterprise': 'Enterprise (100+ boxes)',
+                      };
+                      select.value = bundleMap[tier.name] || '';
+                    }
+                  }, 100);
+                }}
                 className={`mt-6 inline-flex items-center justify-center py-3 rounded-full font-bold text-sm transition ${
                   tier.popular
-                    ? "bg-terra-amber text-terra-dark hover:brightness-105 shadow-lg shadow-terra-amber/30"
+                    ? "bg-terra-blue text-white hover:bg-terra-blue/90 shadow-lg shadow-terra-blue/20"
                     : "bg-terra-brown text-white hover:bg-terra-dark"
                 }`}
               >
-                Get Started
+                Request Wholesale Pricing
               </a>
             </div>
           ))}
+        </div>
+
+        {/* Footer note */}
+        <div className="mt-10 text-center">
+          <p className="text-sm text-terra-dark/60 max-w-3xl mx-auto">
+            <strong>Wholesale Note:</strong> These prices are for wholesale distributors who will be supplying to retail stores.
+            Custom volume pricing available for orders of 500+ kits.
+          </p>
         </div>
       </div>
     </section>
@@ -670,19 +749,19 @@ function StarterPackGuide() {
                   <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-terra-dark">Our Best Value Bundle</h3>
+              <h3 className="text-2xl font-bold text-terra-dark">Recommended Distributor Starter Pack</h3>
             </div>
-            <p className="text-terra-dark/70">Balanced inventory across all themes. Perfect mix to test customer preferences.</p>
+            <p className="text-terra-dark/70">Balanced mix across all 4 product lines. Perfect starter pack to test the Terra range in your market.</p>
           </div>
 
           {/* Content */}
           <div className="px-6 lg:px-10 py-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               {[
-                { name: "Dinosaurs", qty: 12, color: "bg-terra-light-green border-terra-green/20" },
-                { name: "Animals", qty: 12, color: "bg-terra-light-blue border-terra-blue/20" },
-                { name: "Desserts", qty: 12, color: "bg-terra-pink border-terra-coral/20" },
-                { name: "Vogue Vision", qty: 12, color: "bg-[#F9F0FF] border-[#B388FF]/20" },
+                { name: "Dinosaurs", qty: 24, color: "bg-terra-light-green border-terra-green/20" },
+                { name: "Animals", qty: 24, color: "bg-terra-light-blue border-terra-blue/20" },
+                { name: "Desserts", qty: 24, color: "bg-terra-pink border-terra-coral/20" },
+                { name: "Vogue Vision", qty: 24, color: "bg-[#F9F0FF] border-[#B388FF]/20" },
               ].map((cat) => (
                 <div key={cat.name} className={`${cat.color} border rounded-xl p-4 text-center`}>
                   <p className="text-3xl font-bold text-terra-brown mb-1">{cat.qty}</p>
@@ -694,20 +773,20 @@ function StarterPackGuide() {
             <div className="bg-terra-light-green rounded-2xl p-6 space-y-3">
               <div className="flex justify-between items-center">
                 <span className="text-terra-dark/70 font-medium">Total Kits:</span>
-                <span className="text-2xl font-bold text-terra-dark">48 kits</span>
+                <span className="text-2xl font-bold text-terra-dark">96 kits</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-terra-dark/70 font-medium">Wholesale Cost @ $8/kit:</span>
-                <span className="text-2xl font-bold text-terra-brown">$384</span>
+                <span className="text-terra-dark/70 font-medium">Distributor Cost @ $7/kit:</span>
+                <span className="text-2xl font-bold text-terra-brown">$672</span>
               </div>
               <div className="pt-3 border-t border-terra-green/20">
                 <div className="flex justify-between items-center">
-                  <span className="text-terra-dark/70 font-medium">Potential Revenue @ $19.95:</span>
-                  <span className="text-xl font-bold text-terra-green">$957.60</span>
+                  <span className="text-terra-dark/70 font-medium">Recommended Retail @ $19.95:</span>
+                  <span className="text-xl font-bold text-terra-green">$1,915.20</span>
                 </div>
                 <div className="flex justify-between items-center mt-2">
-                  <span className="text-terra-dark/70 font-medium">Your Profit:</span>
-                  <span className="text-2xl font-bold text-terra-green">$573.60</span>
+                  <span className="text-terra-dark/70 font-medium">Your Margin:</span>
+                  <span className="text-2xl font-bold text-terra-green">$1,243.20</span>
                 </div>
               </div>
             </div>
@@ -715,12 +794,20 @@ function StarterPackGuide() {
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <a
                 href="#contact"
+                onClick={() => {
+                  setTimeout(() => {
+                    const select = document.querySelector('select[name="bundle_interest"]') as HTMLSelectElement;
+                    if (select) {
+                      select.value = 'Recommended Distributor Pack (8 boxes)';
+                    }
+                  }, 100);
+                }}
                 className="flex-1 inline-flex items-center justify-center bg-terra-amber text-terra-dark px-6 py-3.5 rounded-full font-bold text-base hover:brightness-105 transition shadow-lg shadow-terra-amber/30"
               >
                 Order This Pack
               </a>
               <a
-                href="#products"
+                href="#product-range"
                 className="flex-1 inline-flex items-center justify-center border-2 border-terra-brown text-terra-brown px-6 py-3.5 rounded-full font-bold text-base hover:bg-terra-brown hover:text-white transition"
               >
                 Customize Your Mix
@@ -728,7 +815,7 @@ function StarterPackGuide() {
             </div>
 
             <p className="mt-4 text-sm text-terra-dark/60 text-center">
-              💡 <strong>Pro tip:</strong> Most retailers reorder within 4-6 weeks. Customers typically purchase 2-3 different themes.
+              💡 <strong>Pro tip:</strong> Most distributors reorder within 4-6 weeks once they see shelf turnover. End customers typically purchase 2-3 different themes per transaction.
             </p>
           </div>
         </div>
@@ -784,7 +871,7 @@ function ProductGrid() {
   const categories = Object.keys(PRODUCTS) as (keyof typeof PRODUCTS)[];
 
   return (
-    <section id="products" className="py-20 bg-white">
+    <section id="product-range" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-terra-dark">Full Product Range</h2>
@@ -835,7 +922,7 @@ function ProductGrid() {
 
 const STEPS = [
   { num: "1", title: "Choose Your Box", desc: "Pick your bundle size and mix themes across all 4 product lines.", color: "bg-terra-amber" },
-  { num: "2", title: "We Ship Fast", desc: "3-5 business days from our Melbourne warehouse straight to your storefront.", color: "bg-terra-green" },
+  { num: "2", title: "We Ship Fast", desc: "3-5 business days from our Melbourne warehouse straight to your location.", color: "bg-terra-green" },
   { num: "3", title: "You Profit", desc: "Retail at $14.95-$21.95. Strong impulse purchase with up to 63% margin.", color: "bg-terra-coral" },
 ];
 
@@ -911,7 +998,7 @@ function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-terra-dark">Get in Touch</h2>
-          <p className="mt-3 text-terra-dark/60 max-w-2xl mx-auto">Ready to stock Terra Clay? Fill out the form and we&apos;ll get back to you within 24 hours.</p>
+          <p className="mt-3 text-terra-dark/60 max-w-2xl mx-auto">Ready to partner with Terra Clay? Fill out the form and we&apos;ll get back to you within 24 hours.</p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-16">
@@ -936,8 +1023,8 @@ function ContactSection() {
                 )}
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-semibold text-terra-dark mb-1.5">Store Name *</label>
-                    <input required type="text" name="store_name" className="w-full border border-terra-brown/15 rounded-xl px-4 py-3 text-sm bg-terra-cream/30 focus:outline-none focus:ring-2 focus:ring-terra-amber/50 focus:border-terra-amber" placeholder="e.g. Little Luxe Boutique" />
+                    <label className="block text-sm font-semibold text-terra-dark mb-1.5">Business Name *</label>
+                    <input required type="text" name="store_name" className="w-full border border-terra-brown/15 rounded-xl px-4 py-3 text-sm bg-terra-cream/30 focus:outline-none focus:ring-2 focus:ring-terra-amber/50 focus:border-terra-amber" placeholder="e.g. ABC Wholesale Distributors" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-terra-dark mb-1.5">Contact Name *</label>
@@ -958,15 +1045,16 @@ function ContactSection() {
                   <label className="block text-sm font-semibold text-terra-dark mb-1.5">Which bundle interests you?</label>
                   <select name="bundle_interest" className="w-full border border-terra-brown/15 rounded-xl px-4 py-3 text-sm bg-terra-cream/30 focus:outline-none focus:ring-2 focus:ring-terra-amber/50 focus:border-terra-amber">
                     <option value="">Select a bundle...</option>
-                    <option>Taster Bundle (12 kits — $10/kit)</option>
-                    <option>Standard Bundle (24 kits — $9/kit)</option>
-                    <option>Premium Bundle (48 kits — $8/kit)</option>
+                    <option>Distributor Starter (4-10 boxes)</option>
+                    <option>Recommended Distributor Pack (8 boxes)</option>
+                    <option>Distributor Premium (10-100 boxes)</option>
+                    <option>Enterprise (100+ boxes)</option>
                     <option>Not sure yet</option>
                   </select>
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-terra-dark mb-1.5">Message</label>
-                  <textarea rows={4} name="message" className="w-full border border-terra-brown/15 rounded-xl px-4 py-3 text-sm bg-terra-cream/30 focus:outline-none focus:ring-2 focus:ring-terra-amber/50 focus:border-terra-amber resize-none" placeholder="Tell us about your store and what you're looking for..." />
+                  <textarea rows={4} name="message" className="w-full border border-terra-brown/15 rounded-xl px-4 py-3 text-sm bg-terra-cream/30 focus:outline-none focus:ring-2 focus:ring-terra-amber/50 focus:border-terra-amber resize-none" placeholder="Tell us about your wholesale business and what you're looking for..." />
                 </div>
                 <button type="submit" disabled={loading} className="w-full sm:w-auto bg-terra-amber text-terra-dark px-10 py-3.5 rounded-full font-bold text-base hover:brightness-105 transition shadow-lg shadow-terra-amber/30 disabled:opacity-50 disabled:cursor-not-allowed">
                   {loading ? 'Sending...' : 'Send Enquiry'}
